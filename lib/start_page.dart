@@ -23,7 +23,6 @@ class _StartPageWidgetState extends State<StartPageWidget> {
 
   void _loadName() async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.remove('username');
     setState(() {
       username = (prefs.getString('username') ?? '');
     });
