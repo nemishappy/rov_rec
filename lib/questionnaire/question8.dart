@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:rov_rec/questionnaire/question2.dart';
+import 'package:rov_rec/result/wait_api.dart';
 import 'package:rov_rec/service/singleton.dart';
 import 'package:rov_rec/widgets/mywidgets.dart';
 
@@ -31,9 +32,7 @@ class _Question8WidgetState extends State<Question8Widget> {
       if (checkboxValue[i]) {
         sg.questions[7] = i + 1;
         print(sg.questions[7]);
-        for (var item in sg.questions) {
-          print(item);
-        }
+        
         _openDialog();
         return;
       }
@@ -87,6 +86,10 @@ class _Question8WidgetState extends State<Question8Widget> {
 
       if (exit) {
         // user pressed Yes button
+        Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const WaitingWidget()),
+  );
       } else {
         // user pressed No button
       }

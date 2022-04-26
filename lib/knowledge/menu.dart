@@ -4,6 +4,7 @@ import 'package:rov_rec/knowledge/general.dart';
 import 'package:rov_rec/knowledge/hero_types.dart';
 import 'package:rov_rec/knowledge/map_building.dart';
 import 'package:rov_rec/knowledge/objective_monster.dart';
+import 'package:rov_rec/questionnaire/question1.dart';
 import 'package:rov_rec/widgets/mywidgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -85,7 +86,7 @@ class _MenuKnowLedgeState extends State<MenuKnowLedge> {
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24, 34, 24, 24),
+                          const EdgeInsetsDirectional.fromSTEB(24, 14, 24, 24),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -297,6 +298,43 @@ class _MenuKnowLedgeState extends State<MenuKnowLedge> {
                                   borderRadius: 12,
                                 ),
                                 onPressed: _launchUrl,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0, 30, 0, 0),
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(),
+                              child: ButtonWidget(
+                                text: 'เริ่มทำแบบทดสอบแนะนำฮีโร่',
+                                options: const ButtonOptions(
+                                  width: 200,
+                                  height: 50,
+                                  color: Color(0xFF046EBC),
+                                  textStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1,
+                                  ),
+                                  borderRadius: 12,
+                                ),
+                                onPressed: () async {
+                                  await Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: Duration(milliseconds: 300),
+                                      reverseDuration:
+                                          Duration(milliseconds: 300),
+                                      child: const Question1Widget(),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),

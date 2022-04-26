@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rov_rec">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="rov_rec"
         android:name="${applicationName}"

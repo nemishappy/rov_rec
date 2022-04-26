@@ -23,6 +23,7 @@ class _StartPageWidgetState extends State<StartPageWidget> {
 
   void _loadName() async {
     final prefs = await SharedPreferences.getInstance();
+    prefs.remove('username');
     setState(() {
       username = (prefs.getString('username') ?? '');
     });
@@ -54,8 +55,8 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(),
-                child: Image.network(
-                  'https://picsum.photos/seed/659/600',
+                child: Image.asset(
+                  'assets/images/logo.png',
                   width: 100,
                   height: 100,
                   fit: BoxFit.cover,
@@ -112,32 +113,6 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                     );
                   },
                 ),
-                // child: ElevatedButton(
-                //   style: ElevatedButton.styleFrom(
-                //     primary: Colors.white,
-                //     minimumSize: Size.fromHeight(
-                //         40), // fromHeight use double.infinity as width and 40 is the height
-                //   ),
-                // onPressed: () async {
-                //   await Navigator.push(
-                //     context,
-                //     PageTransition(
-                //       type: PageTransitionType.rightToLeft,
-                //       duration: Duration(milliseconds: 300),
-                //       reverseDuration: Duration(milliseconds: 300),
-                //       child: name == ''
-                //           ? const OnboardingPageWidget()
-                //           : const CheckNewWidget(),
-                //     ),
-                //   );
-                // },
-                //   child: const Text(
-                //     'เริ่มต้น',
-                //     style: TextStyle(
-                //       color: Color(0xFF303030),
-                //     ),
-                //   ),
-                // ),
               ),
             ),
           ],

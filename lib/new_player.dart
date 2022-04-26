@@ -146,7 +146,7 @@ class _CheckNewWidgetState extends State<CheckNewWidget> {
                                   color: Color(0xFF046EBC),
                                   textStyle: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 16,
+                                    fontSize: 18,
                                   ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
@@ -176,14 +176,14 @@ class _CheckNewWidgetState extends State<CheckNewWidget> {
                               width: double.infinity,
                               decoration: BoxDecoration(),
                               child: ButtonWidget(
-                                text: 'ไม่มี',
+                                text: 'ไม่มี, ฉันไม่แน่ใจขอดูข้อมูลเกมก่อน',
                                 options: const ButtonOptions(
                                   width: 200,
                                   height: 50,
                                   color: Color(0xFF046EBC),
                                   textStyle: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 16,
+                                    fontSize: 18,
                                   ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
