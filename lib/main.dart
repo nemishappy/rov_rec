@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rov_rec/onboarding_page.dart';
+import 'package:rov_rec/start_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -13,22 +14,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ROV Reccommend Hero',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Kanit',
-        scaffoldBackgroundColor: const Color(0xFF343434),
-        textTheme: const TextTheme(
-          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-          bodyText1: TextStyle(fontSize: 14.0, fontFamily: 'Sarabun'),
+        title: 'ROV Reccommend Hero',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: 'Kanit',
+          scaffoldBackgroundColor: const Color(0xFF343434),
+          appBarTheme: AppBarTheme(
+            color: const Color(0xFFEEEEEE),
+          ),
+          textTheme: const TextTheme(
+            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+            headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+            bodyText1: TextStyle(fontSize: 14.0, fontFamily: 'Sarabun'),
+          ),
         ),
-      ),
-      // home: const MyHomePage(
-      //   title: 'Rovrec',
-      // ),
-      home: const OnboardingPageWidget()
-    );
+        // home: const MyHomePage(
+        //   title: 'Rovrec',
+        // ),
+        home: const StartPageWidget());
   }
 }
 
@@ -66,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
